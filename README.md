@@ -10,5 +10,3 @@
 ### 3️⃣ Verificar se uma String é um Palíndromo
 
 ### 4️⃣ Codificar o Jogo "Pedra, Papel, Tesoura"
-
-### 5️⃣ (Desafio Bônus) Desenvolver o Jogo da Cobrinha (Snake Game)
