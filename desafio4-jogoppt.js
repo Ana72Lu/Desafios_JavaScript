@@ -29,44 +29,44 @@ function verificaEscolha(valor) {
             return;
     }
 
-        let escolhaComputador = opcoes[Math.floor(Math.random() * 3)]; // Escolha feita pelo computador.
+    let escolhaComputador = opcoes[Math.floor(Math.random() * 3)]; // Escolha feita pelo computador.
 
-        // Comparação entre a escolha do jogador e do computador:
-        let resultado = 'Você perdeu!';
+    // Comparação entre a escolha do jogador e do computador:
+    let resultado = 'Você perdeu!';
         
-        if (escolhaJogador === escolhaComputador) {
-            resultado = 'Empate!';
-        }
-        else if (escolhaJogador === 'pedra' && escolhaComputador === 'tesoura') {
-            resultado = 'Você ganhou!';
-        }
-        else if (escolhaJogador === 'tesoura' && escolhaComputador === 'papel') {
-            resultado = 'Você ganhou!';
-        }
-        else if (escolhaJogador === 'papel' && escolhaComputador === 'pedra') {
-            resultado = 'Você ganhou!';
-        }
+    if (escolhaJogador === escolhaComputador) {
+        resultado = 'Empate!';
+    }
+    else if (escolhaJogador === 'pedra' && escolhaComputador === 'tesoura') {
+        resultado = 'Você ganhou!';
+    }
+    else if (escolhaJogador === 'tesoura' && escolhaComputador === 'papel') {
+        resultado = 'Você ganhou!';
+    }
+    else if (escolhaJogador === 'papel' && escolhaComputador === 'pedra') {
+        resultado = 'Você ganhou!';
+    }
 
-        // Mostrar a escolha do computador para o jogador e retornar o resultado.
-        console.log(`\nEscolha do computador: ${escolhaComputador}`);
-        return resultado;
+    // Mostrar a escolha do computador para o jogador e retornar o resultado.
+    console.log(`\nEscolha do computador: ${escolhaComputador}`);
+    return resultado;
 }
 
 // Função que inicia o jogo:
 function perguntaJogador() {
     rl.question(
-    `
+`
 Opções:
 1 - Pedra
 2 - Papel
 3 - Tesoura       
 Escolha a opção conforme os números: `, resposta => {
-            let resultado = verificaEscolha(resposta); // Chama a função verificaEscolha().
-            if(resultado) {
-                console.log('Resultado do jogo: ' + resultado); // Mostrar o resultado para o jogador.
-            }
-            jogoNovo(); // Chama a função jogoNovo().
-        });
+        let resultado = verificaEscolha(resposta); // Chama a função verificaEscolha().
+        if(resultado) {
+            console.log('Resultado do jogo: ' + resultado); // Mostrar o resultado para o jogador.
+        }
+        jogoNovo(); // Chama a função jogoNovo().
+    });
 }
 
 // Função que pergunta para o jogador se ele quer jogar novamente:
@@ -74,7 +74,8 @@ function jogoNovo() {
     rl.question('\nQuer jogar de novo? (s/n): ', (resposta) => {
         if (resposta.toLowerCase() === 's') {
             perguntaJogador(); // Chama a função perguntaJogador().
-        } else {
+        } 
+        else {
             rl.close();
         }
     });
