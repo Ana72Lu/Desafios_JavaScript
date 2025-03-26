@@ -10,7 +10,7 @@ const server = createServer((request, response) => {
     response.setHeader('Content-Type', 'application/json');
 
     try {
-        const url = new URL(request.url, `http://${hostname}:${port}`)
+        const url = new URL(request.url, `http://${hostname}:${port}`);
 
         if (request.method === 'GET' && url.pathname === '/health-check') {
             response.statusCode = 200;
@@ -55,7 +55,7 @@ const server = createServer((request, response) => {
                 try {
                     const incrementValue = body ? JSON.parse(body).incrementBy : undefined;
                     
-                    if(isNaN(incrementValue) || incrementValue <= 0 || !Number.isInteger(incrementValue)){
+                    if (isNaN(incrementValue) || incrementValue <= 0 || !Number.isInteger(incrementValue)) {
                         response.statusCode = 400;
                         response.end(JSON.stringify({ error: 'Invalid input!' }));
                     } else {
