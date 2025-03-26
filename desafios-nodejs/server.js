@@ -4,6 +4,8 @@ const { URL } = require('node:url');
 const hostname = '127.0.0.1';
 const port = 3000;
 
+let counter = 0;
+
 const server = createServer((request, response) => {
     response.setHeader('Content-Type', 'application/json');
 
@@ -55,10 +57,11 @@ const server = createServer((request, response) => {
                     
                     if(isNaN(incrementValue) || incrementValue <= 0 || !Number.isInteger(incrementValue)){
                         response.statusCode = 400;
-                        response.end(JSON.stringify({ error: 'Invalid input!' }))
+                        response.end(JSON.stringify({ error: 'Invalid input!' }));
                     } else {
+                        counter += incrementValue;
                         response.statusCode = 200;
-                        response.end(JSON.stringify({ counter: incrementValue }));
+                        response.end(JSON.stringify({ counter: counter }));
                     }
 
                 } catch (error) {
