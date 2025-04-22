@@ -1,4 +1,3 @@
-// Configuração do input:
 const readline = require('node:readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -7,7 +6,7 @@ const rl = readline.createInterface({
 
 console.log('\nJogo "Pedra, Papel, Tesoura"');
 
-perguntaJogador(); // Chamar a função perguntaJogador().
+perguntaJogador();
 
 // Função que verifica a opção escolhida pelo jogador, incluindo se é válida, e retorna o resultado:
 function verificaEscolha(valor) {
@@ -61,11 +60,11 @@ Opções:
 2 - Papel
 3 - Tesoura       
 Escolha a opção conforme os números: `, resposta => {
-        let resultado = verificaEscolha(resposta); // Chama a função verificaEscolha().
+        let resultado = verificaEscolha(resposta);
         if(resultado) {
-            console.log('Resultado do jogo: ' + resultado); // Mostrar o resultado para o jogador.
+            console.log('Resultado do jogo: ' + resultado);
         }
-        jogoNovo(); // Chama a função jogoNovo().
+        jogoNovo();
     });
 }
 
@@ -73,7 +72,7 @@ Escolha a opção conforme os números: `, resposta => {
 function jogoNovo() {
     rl.question('\nQuer jogar de novo? (s/n): ', (resposta) => {
         if (resposta.toLowerCase() === 's') {
-            perguntaJogador(); // Chama a função perguntaJogador().
+            perguntaJogador();
         } 
         else {
             rl.close();

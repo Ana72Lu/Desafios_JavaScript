@@ -16,7 +16,6 @@ function numPrimo(num) {
     return true;
 }
 
-// Configuração do input:
 const readline = require('node:readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -24,6 +23,6 @@ const rl = readline.createInterface({
 });
 
 rl.question('Digite o número: ', resposta => {
-    console.log('Resultado: ' + numPrimo(resposta) + '\n'); // Chama a função numPrimo().
+    console.log('Resultado: ' + numPrimo(resposta) + '\n');
     rl.close();
 });

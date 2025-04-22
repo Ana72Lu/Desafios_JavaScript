@@ -12,10 +12,9 @@ function somaArray(valores) {
         }
         valoresValidos.push(Number(i));
     }
-    return valoresValidos.reduce((soma, num) => soma + num, 0); // Soma dos números válidos.
+    return valoresValidos.reduce((soma, num) => soma + num, 0);
 }
 
-// Configuração do input:
 const readline = require('node:readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -23,6 +22,6 @@ const rl = readline.createInterface({
 });
 
 rl.question('Digite os números do array separados por vírgula: ', resposta => {
-    console.log('Resultado: ' + somaArray(resposta) + '\n'); // Chama a função somaArray().
+    console.log('Resultado: ' + somaArray(resposta) + '\n');
     rl.close();
 });
